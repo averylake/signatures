@@ -1,0 +1,1196 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Signatures Through Technologies, Avery Lake</title>
+<meta name="description" content="A 22-state single-channel video with soundtrack by Avery Lake. From Socrates' fear of writing to AI and post-AI substrates, a fingerprint passes through the technologies that carry thought." />
+<meta name="theme-color" content="#ffffff" />
+<meta name="color-scheme" content="light dark" />
+<meta name="author" content="Avery Lake" />
+<meta name="robots" content="index, follow" />
+<meta name="keywords" content="Avery Lake, Signatures Through Technologies, digital art, AI art, post-AI, chiasm, fingerprint, orality, writing, computation, Lumen Prize" />
+<link rel="canonical" href="https://signatures.averylakeofficial.com/" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/favicon-192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Avery Lake" />
+<meta property="og:url" content="https://signatures.averylakeofficial.com/" />
+<meta property="og:title" content="Signatures Through Technologies — Avery Lake" />
+<meta property="og:description" content="A 22-state single-channel video with soundtrack. From Socrates' fear of writing to AI and post-AI substrates, a fingerprint passes through the technologies that carry thought." />
+<meta property="og:image" content="https://signatures.averylakeofficial.com/assets/social/signatures-through-technologies-og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="A luminous fingerprint from Signatures Through Technologies by Avery Lake." />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Signatures Through Technologies — Avery Lake" />
+<meta name="twitter:description" content="A 22-state single-channel video with soundtrack. From Socrates' fear of writing to AI and post-AI substrates, a fingerprint passes through the technologies that carry thought." />
+<meta name="twitter:image" content="https://signatures.averylakeofficial.com/assets/social/signatures-through-technologies-og.png" />
+<meta name="twitter:image:alt" content="A luminous fingerprint from Signatures Through Technologies by Avery Lake." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-elev: #f6f5f1;
+    --fg: #131311;
+    --fg-strong: #000;
+    --muted: #6c6962;
+    --hair: rgba(19, 19, 17, 0.12);
+    --hair-strong: rgba(19, 19, 17, 0.30);
+    --accent: #4d23a8;
+    --accent-soft: rgba(77, 35, 168, 0.08);
+    --void: #000;
+    --paper: #fff;
+    --pad-x: clamp(20px, 5vw, 88px);
+    --grid-gap: clamp(16px, 2.5vw, 32px);
+    --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  html[data-theme="dark"] {
+    --bg: #0a0a0a;
+    --bg-elev: #131311;
+    --fg: #e8e4dc;
+    --fg-strong: #ffffff;
+    --muted: #8a857a;
+    --hair: rgba(232, 228, 220, 0.13);
+    --hair-strong: rgba(232, 228, 220, 0.32);
+    --accent: #b89cff;
+    --accent-soft: rgba(184, 156, 255, 0.10);
+    --void: #000;
+    --paper: #fff;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "ss01", "cv11";
+  }
+  html { scroll-behavior: smooth; }
+  body { transition: background 320ms ease, color 320ms ease; min-height: 100vh; }
+
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--accent); }
+  a.work-link {
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.03em;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+
+  /* ───────── Top bar ───────── */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 18px var(--pad-x);
+    background: color-mix(in oklab, var(--bg) 88%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--hair);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .topbar .brand { font-weight: 500; color: var(--fg-strong); }
+  .topbar .brand .by { color: var(--muted); margin-left: 0.6em; }
+  .topnav {
+    display: flex; gap: 1.8em; justify-content: center;
+    list-style: none; padding: 0; margin: 0;
+  }
+  .topnav a { color: var(--muted); transition: color 160ms; }
+  .topnav a:hover { color: var(--fg-strong); }
+  .topnav a .num { color: var(--muted); margin-right: 0.4em; font-variant-numeric: tabular-nums; }
+  .topbar .toolbar { display: flex; justify-content: flex-end; gap: 14px; align-items: center; }
+  .theme-toggle {
+    appearance: none; border: 1px solid var(--hair-strong); background: transparent;
+    color: var(--fg); font: inherit; cursor: pointer;
+    padding: 7px 10px;
+    letter-spacing: 0.18em;
+    font-size: 11px;
+    transition: border-color 160ms, color 160ms, background 160ms;
+  }
+  .theme-toggle:hover { color: var(--fg-strong); border-color: var(--fg-strong); }
+
+  @media (max-width: 1100px) {
+    .topnav { gap: 1.2em; }
+  }
+  @media (max-width: 1000px) {
+    .topbar { grid-template-columns: auto auto; }
+    .topnav { display: none; }
+  }
+
+  /* ───────── Hero ───────── */
+  .hero {
+    padding: clamp(60px, 10vh, 140px) var(--pad-x) clamp(60px, 8vh, 100px);
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: clamp(32px, 5vh, 64px);
+    text-align: center;
+  }
+  .stage {
+    position: relative;
+    width: min(72vh, 88vw, 820px);
+    aspect-ratio: 1 / 1;
+    background: var(--paper);
+    overflow: hidden;
+    transition: background 280ms ease;
+  }
+  html[data-theme="dark"] .stage {
+    background: var(--void);
+    box-shadow: 0 0 0 1px var(--hair), 0 30px 80px -20px rgba(0,0,0,0.6);
+  }
+  .stage img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  .stage .stagebadge {
+    position: absolute; left: 12px; bottom: 12px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    background: color-mix(in oklab, var(--bg) 80%, transparent);
+    padding: 5px 8px;
+    border: 1px solid var(--hair);
+    pointer-events: none;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .hero-meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 2;
+    text-align: center;
+  }
+  .hero-meta .row { display: block; }
+  .hero-meta .name { color: var(--fg-strong); letter-spacing: 0.22em; font-weight: 500; }
+  .hero-meta .work { color: var(--fg); }
+  .hero-meta .edition { color: var(--fg-strong); margin-top: 0.5em; }
+  .soundtrack {
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+    width: min(540px, 86vw);
+    margin-top: -24px;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .soundtrack .sound-title { color: var(--fg-strong); }
+  .soundtrack audio {
+    width: 100%;
+    height: 38px;
+    color-scheme: light dark;
+  }
+
+  .scroll-prompt {
+    margin-top: 4px;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .scroll-prompt .line { display: inline-block; width: 1px; height: 56px; background: var(--hair-strong); }
+
+  /* ───────── Sections ───────── */
+  .section {
+    padding: clamp(60px, 9vh, 120px) var(--pad-x);
+    border-top: 1px solid var(--hair);
+  }
+  .section-head {
+    display: grid;
+    grid-template-columns: minmax(110px, 1fr) 6fr;
+    gap: var(--grid-gap);
+    align-items: baseline;
+    margin-bottom: clamp(32px, 5vh, 56px);
+  }
+  .section-no {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .section-title {
+    font-size: clamp(13px, 1.05vw, 15px);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--fg-strong);
+    margin: 0;
+  }
+  .section-body {
+    display: grid;
+    grid-template-columns: minmax(110px, 1fr) 6fr;
+    gap: var(--grid-gap);
+  }
+  .section-body > .gutter {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .section-body > .content { max-width: 880px; }
+  @media (max-width: 720px) {
+    .section-head, .section-body { grid-template-columns: 1fr; }
+  }
+
+  /* ───────── Editorial type ───────── */
+  .editorial {
+    font-size: clamp(20px, 1.65vw, 26px);
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--fg);
+    font-weight: 300;
+    text-wrap: pretty;
+  }
+  .editorial p { margin: 0 0 1.1em; }
+  .editorial p:last-child { margin-bottom: 0; }
+  .editorial em { color: var(--fg-strong); font-style: italic; }
+  .editorial .closing {
+    margin-top: 1.4em;
+    font-family: var(--font-mono);
+    font-size: 0.5em;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .editorial .closing span { display: block; }
+
+  /* ───────── Chiasm visualization ───────── */
+  .chiasm-viz {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    gap: 4px;
+    margin: 32px 0;
+    position: relative;
+  }
+  .chiasm-viz .col { display: flex; flex-direction: column; gap: 4px; }
+  .chiasm-viz .swatch {
+    width: 100%;
+    aspect-ratio: 1 / 1.5;
+    border: 1px solid var(--hair);
+    position: relative;
+  }
+  .chiasm-viz .swatch.future::after {
+    content: "★";
+    position: absolute;
+    top: 4px; right: 5px;
+    color: var(--accent);
+    font-size: 9px;
+    line-height: 1;
+  }
+  .chiasm-viz .gly {
+    font-family: var(--font-mono);
+    font-size: clamp(10px, 1vw, 12px);
+    letter-spacing: 0.05em;
+    color: var(--fg-strong);
+    text-align: center;
+  }
+  .chiasm-viz .gly.return { color: var(--muted); }
+  .chiasm-viz .label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 2px;
+  }
+  .chiasm-viz .fold {
+    position: absolute;
+    top: -20px; bottom: -20px;
+    right: -2px;
+    width: 0; border-right: 1px dashed var(--accent);
+  }
+  .chiasm-viz .foldlabel {
+    position: absolute;
+    right: -1px; top: -34px;
+    transform: translateX(50%);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    text-transform: uppercase;
+    background: var(--bg); padding: 0 6px;
+  }
+  @media (max-width: 720px) {
+    .chiasm-viz { grid-template-columns: repeat(11, 1fr); gap: 2px; }
+    .chiasm-viz .gly { font-size: 9px; }
+    .chiasm-viz .label { display: none; }
+  }
+
+  /* ───────── Chiasm table ───────── */
+  .chiasm-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    margin-top: 32px;
+  }
+  .chiasm-table thead th {
+    text-align: left;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-size: 10px;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--hair-strong);
+  }
+  .chiasm-table tbody td {
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--hair);
+    vertical-align: middle;
+    color: var(--fg);
+  }
+  .chiasm-table tbody tr.fold-row td { border-bottom: 1px solid var(--hair-strong); }
+  .chiasm-table tbody tr.fold-row td:first-child { color: var(--accent); }
+  .chiasm-table tbody tr.future td:nth-child(2)::before {
+    content: "★ "; color: var(--accent); margin-right: 2px;
+  }
+  .chiasm-table .col-idx { width: 4ch; color: var(--muted); }
+  .chiasm-table .col-gly { width: 5ch; color: var(--fg-strong); font-weight: 500; }
+  .chiasm-table .col-hex { min-width: 12ch; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .chiasm-table .col-name { color: var(--fg); }
+  .chiasm-table .col-sw {
+    width: 28px;
+  }
+  .chiasm-table .col-sw .sw {
+    width: 14px; height: 14px;
+    border: 1px solid var(--hair);
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .future-palettes {
+    display: grid;
+    gap: 12px;
+    margin: 28px 0 4px;
+  }
+  .future-palette {
+    border-top: 1px solid var(--hair);
+    padding-top: 12px;
+    display: grid;
+    grid-template-columns: minmax(160px, 0.9fr) 1.4fr;
+    gap: 18px;
+    align-items: start;
+  }
+  .future-palette .state {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--fg-strong);
+  }
+  .future-palette .state span {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 10px;
+  }
+  .palette-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .palette-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+  }
+  .palette-chip::before {
+    content: "";
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    background: var(--chip);
+    border: 1px solid var(--hair);
+  }
+  @media (max-width: 720px) {
+    .future-palette { grid-template-columns: 1fr; gap: 8px; }
+  }
+
+  /* ───────── Disclosures (toggles) ───────── */
+  details.disclosure {
+    border-top: 1px solid var(--hair);
+    margin: 0;
+  }
+  details.disclosure[open] { background: transparent; }
+  details.disclosure > summary {
+    list-style: none;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: minmax(110px, 1fr) 6fr auto;
+    gap: var(--grid-gap);
+    align-items: baseline;
+    padding: clamp(28px, 4vh, 44px) var(--pad-x);
+    transition: background 240ms;
+  }
+  details.disclosure > summary::-webkit-details-marker { display: none; }
+  details.disclosure > summary:hover { background: var(--bg-elev); }
+  details.disclosure > summary .lede {
+    font-size: clamp(15px, 1.2vw, 18px);
+    color: var(--muted);
+    line-height: 1.5;
+    max-width: 60ch;
+  }
+  details.disclosure > summary .lede strong {
+    color: var(--fg-strong);
+    font-weight: 500;
+    display: block;
+    font-size: clamp(13px, 1.05vw, 15px);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 0.8em;
+  }
+  details.disclosure > summary .marker {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  details.disclosure[open] > summary .marker::before { content: "[ – ] close"; }
+  details.disclosure:not([open]) > summary .marker::before { content: "[ + ] open"; }
+  details.disclosure .body {
+    padding: 8px var(--pad-x) clamp(48px, 7vh, 80px);
+    display: grid;
+    grid-template-columns: minmax(110px, 1fr) 6fr;
+    gap: var(--grid-gap);
+  }
+  details.disclosure .body > .gutter {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  details.disclosure .body .content { max-width: 880px; }
+  details.disclosure .body .content > * + * { margin-top: 1.1em; }
+  details.disclosure .body .content p {
+    font-size: clamp(16px, 1.2vw, 18px);
+    line-height: 1.6;
+    color: var(--fg);
+    margin: 0;
+  }
+  details.disclosure .body .content p .em { color: var(--fg-strong); }
+  details.disclosure .body .content h3 {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 32px 0 8px;
+    font-weight: 500;
+  }
+  details.disclosure .body .content h3:first-child { margin-top: 0; }
+  details.disclosure .body .content ul {
+    list-style: none;
+    padding: 0; margin: 0;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--fg);
+  }
+  details.disclosure .body .content ul li {
+    display: grid;
+    grid-template-columns: 14ch 1fr;
+    gap: 16px;
+    padding: 8px 0;
+    border-top: 1px solid var(--hair);
+    letter-spacing: 0.04em;
+  }
+  details.disclosure .body .content ul li:first-child { border-top: 1px solid var(--hair-strong); }
+  details.disclosure .body .content ul li .k { color: var(--muted); text-transform: uppercase; letter-spacing: 0.18em; font-size: 10px; }
+
+  @media (max-width: 720px) {
+    details.disclosure > summary { grid-template-columns: 1fr; }
+    details.disclosure > summary .marker { order: -1; }
+    details.disclosure .body { grid-template-columns: 1fr; }
+    details.disclosure .body .content ul li { grid-template-columns: 1fr; gap: 4px; }
+  }
+
+  /* ───────── Companion (Mirror Making) ───────── */
+  .lineage-companion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(20px, 3vw, 40px);
+    margin-top: 32px;
+    padding: clamp(24px, 4vh, 40px);
+    background: var(--bg-elev);
+    align-items: center;
+  }
+  .lineage-companion .img-wrap {
+    aspect-ratio: 3 / 4;
+    background: var(--paper);
+    display: grid; place-items: center;
+    border: 1px solid var(--hair);
+  }
+  .lineage-companion img { max-height: 100%; width: auto; }
+  .lineage-companion .text {
+    font-family: var(--font-sans);
+  }
+  .lineage-companion .text .label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .lineage-companion .text h4 {
+    font-size: clamp(18px, 1.6vw, 24px);
+    line-height: 1.3;
+    margin: 0 0 12px;
+    color: var(--fg-strong);
+    font-weight: 500;
+    font-style: italic;
+  }
+  .lineage-companion .text p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--fg);
+    margin: 0 0 16px;
+  }
+  .lineage-companion .text a {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+  }
+  @media (max-width: 720px) {
+    .lineage-companion { grid-template-columns: 1fr; }
+  }
+
+  /* ───────── Acquisition ───────── */
+  .acquire-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(20px, 3vw, 40px);
+    align-items: stretch;
+  }
+  .acquire-card {
+    border: 1px solid var(--hair-strong);
+    padding: clamp(28px, 4vh, 44px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    background: var(--bg);
+    transition: background 240ms, border-color 240ms;
+  }
+  .acquire-card:hover { background: var(--bg-elev); border-color: var(--fg-strong); }
+  .acquire-card .label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .acquire-card h4 {
+    font-size: clamp(20px, 1.7vw, 28px);
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--fg-strong);
+  }
+  .acquire-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+    margin: 0;
+  }
+  .acquire-card .cta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--fg-strong);
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 3px;
+    align-self: flex-start;
+  }
+  .acquire-card .cta:hover { color: var(--accent); }
+  @media (max-width: 720px) {
+    .acquire-block { grid-template-columns: 1fr; }
+  }
+
+  /* ───────── Footer ───────── */
+  footer.foot {
+    padding: clamp(40px, 7vh, 72px) var(--pad-x);
+    border-top: 1px solid var(--hair);
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--grid-gap);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  footer.foot a { color: var(--muted); }
+  footer.foot a:hover { color: var(--fg-strong); }
+  footer.foot h5 {
+    color: var(--fg-strong);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    margin: 0 0 14px;
+    font-weight: 500;
+  }
+  footer.foot ul {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  footer.foot .colophon {
+    font-size: 10px;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 40ch;
+  }
+  footer.foot .colophon .sig {
+    color: var(--fg-strong);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+  }
+  @media (max-width: 900px) {
+    footer.foot { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    footer.foot { grid-template-columns: 1fr; }
+  }
+
+  /* utility */
+  .accent { color: var(--accent); }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+    white-space: nowrap; border: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- ───────── Top bar ───────── -->
+<nav class="topbar" aria-label="Primary">
+  <div class="brand">
+    Signatures&nbsp;Through&nbsp;Technologies
+    <span class="by">/ Avery Lake</span>
+  </div>
+  <ul class="topnav">
+    <li><a href="#work"><span class="num">01</span>Work</a></li>
+    <li><a href="#chiasm"><span class="num">02</span>Chiasm</a></li>
+    <li><a href="#statement"><span class="num">03</span>Statement</a></li>
+    <li><a href="#artist"><span class="num">04</span>Artist</a></li>
+    <li><a href="#lineage"><span class="num">05</span>Lineage</a></li>
+    <li><a href="#acquire"><span class="num">06</span>Acquire</a></li>
+  </ul>
+  <div class="toolbar">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light or dark theme">Light · Dark</button>
+  </div>
+</nav>
+
+<!-- ───────── Hero ───────── -->
+<section class="hero" aria-label="The work">
+  <div class="stage" role="img" aria-label="The expanded chiasm, a fingerprint passing through 22 states, looping">
+    <img id="live" src="assets/animations/expanded-chiasm_uv-luminescence.gif" alt="Signatures Through Technologies, expanded chiasm animation (22 states, 8.8 seconds, looping)" />
+    <div class="stagebadge">22 STATES · 400 ms / FRAME · LOOP</div>
+  </div>
+  <div class="hero-meta">
+    <span class="row name">Avery Lake</span>
+    <span class="row work"><em>Signatures Through Technologies</em>, 2026</span>
+    <span class="row">Single-channel video with soundtrack · 8.8 sec. visual loop · 1254 × 1254 px</span>
+    <span class="row edition">1 / 1. Minted upon request</span>
+  </div>
+  <div class="soundtrack" aria-label="Soundtrack player">
+    <span><span class="sound-title">Soundtrack:</span> Superposition · Avery Lake · 2026</span>
+    <audio controls preload="metadata" loop src="assets/audio/superposition-avery-lake-2026.mp3">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  <div class="scroll-prompt" aria-hidden="true">
+    <span class="line"></span>
+  </div>
+</section>
+
+<!-- ───────── §01 The Work (toggle) ───────── -->
+<details class="disclosure" id="work">
+  <summary>
+    <div class="section-no">§ 01</div>
+    <div class="lede">
+      <strong>The Work</strong>
+      From Socrates' fear that writing would move memory outside the self to today's AI systems, the work asks how every medium changes what it means to think.
+    </div>
+    <div class="marker"></div>
+  </summary>
+  <div class="body">
+    <div class="gutter">Working caption<br />2026</div>
+    <div class="content">
+      <div class="editorial">
+        <p>We talk about AI as if tools had suddenly entered human thought. But we have always become human through the technologies that carry language: <em>orality, writing, and now computation.</em></p>
+        <p>Socrates feared writing because it would move memory outside the self. Maybe he was right. Human thought surely developed differently through the alphabet.</p>
+        <p>And maybe that is the point.</p>
+        <p>Every medium changes what it means to think. <em>Every tool leaves a fingerprint on the self.</em></p>
+        <p>The work is accompanied by <em>Superposition</em> by Avery Lake, 2026. A screening excerpt is available on <a href="https://youtu.be/IdvAe_U98Us" target="_blank" rel="noopener">YouTube</a>.</p>
+        <div class="closing">
+          <span>Avery Lake</span>
+          <span>Signatures Through Technologies / Orality · Writing · Computation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- ───────── §02 The Expanded Chiasm (toggle) ───────── -->
+<details class="disclosure" id="chiasm">
+  <summary>
+    <div class="section-no">§ 02</div>
+    <div class="lede">
+      <strong>The Expanded Chiasm</strong>
+      Twenty-two states. The mirror sequence drawn from <a class="work-link" href="https://gallery.averylakeofficial.com/products/the-mirror-making-of-a-manifesto" target="_blank" rel="noopener"><em>The Mirror Making of a Manifesto</em></a>, with three speculative states inserted as a luminescent flare on either side of the origin.
+    </div>
+    <div class="marker"></div>
+  </summary>
+  <div class="body">
+    <div class="gutter">22 states<br />8.8 seconds<br />400 ms / frame</div>
+    <div class="content">
+      <p style="font-size: clamp(16px, 1.25vw, 19px); line-height: 1.6; color: var(--fg); margin: 0 0 24px; max-width: 64ch;">
+        The work follows a sixteen-state spine drawn from <a class="work-link" href="https://gallery.averylakeofficial.com/products/the-mirror-making-of-a-manifesto" target="_blank" rel="noopener"><em>The Mirror Making of a Manifesto</em></a>, a visual meditation and framework built last year on creativity in the age of intelligence. It is a chiasm that opens at <span class="accent">breath</span>, descends to <span class="accent">silence</span>, and returns. Three speculative states (<span class="accent">I</span>, <span class="accent">J</span>, <span class="accent">K</span>) are inserted on either side of the origin point as a luminescent flare: a hypothesis about the substrates through which a human signature may become visible after writing, after the screen, after the prompt.
+      </p>
+
+      <div class="future-palettes" aria-label="Implemented palettes for the three speculative future states">
+        <div class="future-palette">
+          <div class="state">I. Gesture &amp; Interface<span>Background #11191A</span></div>
+          <div class="palette-chips">
+            <span class="palette-chip" style="--chip:#39ff7e">#39FF7E</span>
+            <span class="palette-chip" style="--chip:#00f5b1">#00F5B1</span>
+            <span class="palette-chip" style="--chip:#00d0ff">#00D0FF</span>
+            <span class="palette-chip" style="--chip:#ffee63">#FFEE63</span>
+            <span class="palette-chip" style="--chip:#ff5836">#FF5836</span>
+          </div>
+        </div>
+        <div class="future-palette">
+          <div class="state">J. Simulation &amp; World<span>Background #080E16</span></div>
+          <div class="palette-chips">
+            <span class="palette-chip" style="--chip:#00ff91">#00FF91</span>
+            <span class="palette-chip" style="--chip:#00e8ff">#00E8FF</span>
+            <span class="palette-chip" style="--chip:#2e74ff">#2E74FF</span>
+            <span class="palette-chip" style="--chip:#ff3de1">#FF3DE1</span>
+            <span class="palette-chip" style="--chip:#ff6d19">#FF6D19</span>
+            <span class="palette-chip" style="--chip:#fff554">#FFF554</span>
+          </div>
+        </div>
+        <div class="future-palette">
+          <div class="state">K. Luminescence &amp; Matter<span>Background #03060D</span></div>
+          <div class="palette-chips">
+            <span class="palette-chip" style="--chip:#32ff5d">#32FF5D</span>
+            <span class="palette-chip" style="--chip:#00f4ff">#00F4FF</span>
+            <span class="palette-chip" style="--chip:#3765ff">#3765FF</span>
+            <span class="palette-chip" style="--chip:#ff26d1">#FF26D1</span>
+            <span class="palette-chip" style="--chip:#ff5700">#FF5700</span>
+            <span class="palette-chip" style="--chip:#fff14f">#FFF14F</span>
+            <span class="palette-chip" style="--chip:#ffffee">#FFFFEE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- visualization: two rows showing mirror symmetry -->
+      <div class="chiasm-viz" aria-label="22-state chiasm visualization, outbound on top, return on bottom">
+        <!-- Outbound: A B C D E F G I J K H -->
+        <div class="col">
+          <div class="swatch" style="background:#ffffff"></div>
+          <div class="gly">A</div>
+        </div>
+        <div class="col">
+          <div class="swatch" style="background:#f7f7f7"></div>
+          <div class="gly">B</div>
+        </div>
+        <div class="col">
+          <div class="swatch" style="background:#f1f1f1"></div>
+          <div class="gly">C</div>
+        </div>
+        <div class="col">
+          <div class="swatch" style="background:#d9d9d9"></div>
+          <div class="gly">D</div>
+        </div>
+        <div class="col">
+          <div class="swatch" style="background:#a6a6a6"></div>
+          <div class="gly">E</div>
+        </div>
+        <div class="col">
+          <div class="swatch" style="background:#404040"></div>
+          <div class="gly">F</div>
+        </div>
+        <div class="col">
+          <div class="swatch" style="background:#212121"></div>
+          <div class="gly">G</div>
+        </div>
+        <div class="col">
+          <div class="swatch future" style="background:linear-gradient(135deg,#11191a 0%,#39ff7e 24%,#00f5b1 43%,#00d0ff 62%,#ffee63 81%,#ff5836 100%)"></div>
+          <div class="gly accent">I</div>
+        </div>
+        <div class="col">
+          <div class="swatch future" style="background:linear-gradient(135deg,#080e16 0%,#00ff91 18%,#00e8ff 34%,#2e74ff 50%,#ff3de1 66%,#ff6d19 82%,#fff554 100%)"></div>
+          <div class="gly accent">J</div>
+        </div>
+        <div class="col">
+          <div class="swatch future" style="background:linear-gradient(135deg,#03060d 0%,#32ff5d 15%,#00f4ff 30%,#3765ff 45%,#ff26d1 60%,#ff5700 75%,#fff14f 88%,#ffffee 100%)"></div>
+          <div class="gly accent">K</div>
+        </div>
+        <div class="col" style="position:relative">
+          <div class="swatch" style="background:#000000"></div>
+          <div class="gly">H</div>
+          <div class="fold" aria-hidden="true"></div>
+          <div class="foldlabel">FOLD</div>
+        </div>
+      </div>
+
+      <div class="chiasm-viz" style="margin-top: 6px;" aria-label="Return row">
+        <!-- Return (right-to-left, mirrored): A' B' C' D' E' F' G' I' J' K' H' -->
+        <div class="col">
+          <div class="swatch" style="background:#ffffff"></div>
+          <div class="gly return">A′</div>
+        </div>
+        <div class="col">
+          <div class="swatch" style="background:#f7f7f7"></div>
+          <div class="gly return">B′</div>
+        </div>
+        <div class="col">
+          <div class="swatch" style="background:#f1f1f1"></div>
+          <div class="gly return">C′</div>
+        </div>
+        <div class="col">
+          <div class="swatch" style="background:#d9d9d9"></div>
+          <div class="gly return">D′</div>
+        </div>
+        <div class="col">
+          <div class="swatch" style="background:#a6a6a6"></div>
+          <div class="gly return">E′</div>
+        </div>
+        <div class="col">
+          <div class="swatch" style="background:#404040"></div>
+          <div class="gly return">F′</div>
+        </div>
+        <div class="col">
+          <div class="swatch" style="background:#212121"></div>
+          <div class="gly return">G′</div>
+        </div>
+        <div class="col">
+          <div class="swatch future" style="background:linear-gradient(135deg,#11191a 0%,#39ff7e 24%,#00f5b1 43%,#00d0ff 62%,#ffee63 81%,#ff5836 100%)"></div>
+          <div class="gly return accent">I′</div>
+        </div>
+        <div class="col">
+          <div class="swatch future" style="background:linear-gradient(135deg,#080e16 0%,#00ff91 18%,#00e8ff 34%,#2e74ff 50%,#ff3de1 66%,#ff6d19 82%,#fff554 100%)"></div>
+          <div class="gly return accent">J′</div>
+        </div>
+        <div class="col">
+          <div class="swatch future" style="background:linear-gradient(135deg,#03060d 0%,#32ff5d 15%,#00f4ff 30%,#3765ff 45%,#ff26d1 60%,#ff5700 75%,#fff14f 88%,#ffffee 100%)"></div>
+          <div class="gly return accent">K′</div>
+        </div>
+        <div class="col">
+          <div class="swatch" style="background:#000000"></div>
+          <div class="gly return">H′</div>
+        </div>
+      </div>
+
+      <p style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin: 22px 0 0;">
+        Top row reads left → right (outbound).&nbsp;&nbsp;Bottom row reads right → left (return).&nbsp;&nbsp;Each column is a mirrored pair.&nbsp;&nbsp;★ marks the three speculative future states.
+      </p>
+
+      <!-- ───────── Chiasm table ───────── -->
+      <table class="chiasm-table" aria-label="The 22 states in playback order">
+        <thead>
+          <tr>
+            <th class="col-idx">№</th>
+            <th class="col-sw" aria-hidden="true"></th>
+            <th class="col-gly">Glyph</th>
+            <th class="col-name">State</th>
+            <th class="col-hex">Background</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="col-idx">01</td><td class="col-sw"><span class="sw" style="background:#ffffff"></span></td><td class="col-gly">A</td><td class="col-name">Breath &amp; Consciousness</td><td class="col-hex">#FFFFFF</td></tr>
+          <tr><td class="col-idx">02</td><td class="col-sw"><span class="sw" style="background:#f7f7f7"></span></td><td class="col-gly">B</td><td class="col-name">Trace &amp; Dust</td><td class="col-hex">#F7F7F7</td></tr>
+          <tr><td class="col-idx">03</td><td class="col-sw"><span class="sw" style="background:#f1f1f1"></span></td><td class="col-gly">C</td><td class="col-name">Ink &amp; Papyrus</td><td class="col-hex">#F1F1F1</td></tr>
+          <tr><td class="col-idx">04</td><td class="col-sw"><span class="sw" style="background:#d9d9d9"></span></td><td class="col-gly">D</td><td class="col-name">Print &amp; Press</td><td class="col-hex">#D9D9D9</td></tr>
+          <tr><td class="col-idx">05</td><td class="col-sw"><span class="sw" style="background:#a6a6a6"></span></td><td class="col-gly">E</td><td class="col-name">Code &amp; Screen</td><td class="col-hex">#A6A6A6</td></tr>
+          <tr><td class="col-idx">06</td><td class="col-sw"><span class="sw" style="background:#404040"></span></td><td class="col-gly">F</td><td class="col-name">Prompt &amp; Machine</td><td class="col-hex">#404040</td></tr>
+          <tr><td class="col-idx">07</td><td class="col-sw"><span class="sw" style="background:#212121"></span></td><td class="col-gly">G</td><td class="col-name">Light &amp; Mirror</td><td class="col-hex">#212121</td></tr>
+          <tr class="future"><td class="col-idx">08</td><td class="col-sw"><span class="sw" style="background:#11191a"></span></td><td class="col-gly">I</td><td class="col-name">Gesture &amp; Interface</td><td class="col-hex">#11191A</td></tr>
+          <tr class="future"><td class="col-idx">09</td><td class="col-sw"><span class="sw" style="background:#080e16"></span></td><td class="col-gly">J</td><td class="col-name">Simulation &amp; World</td><td class="col-hex">#080E16</td></tr>
+          <tr class="future"><td class="col-idx">10</td><td class="col-sw"><span class="sw" style="background:#03060d"></span></td><td class="col-gly">K</td><td class="col-name">Luminescence &amp; Matter</td><td class="col-hex">#03060D</td></tr>
+          <tr class="fold-row"><td class="col-idx">11</td><td class="col-sw"><span class="sw" style="background:#000000"></span></td><td class="col-gly">H</td><td class="col-name">Silence &amp; Origin <span style="color:var(--muted); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; margin-left:8px;">/ the fold</span></td><td class="col-hex">#000000</td></tr>
+          <tr class="fold-row"><td class="col-idx">12</td><td class="col-sw"><span class="sw" style="background:#000000"></span></td><td class="col-gly">H′</td><td class="col-name">Origin &amp; Silence</td><td class="col-hex">#000000</td></tr>
+          <tr class="future"><td class="col-idx">13</td><td class="col-sw"><span class="sw" style="background:#03060d"></span></td><td class="col-gly">K′</td><td class="col-name">Matter &amp; Luminescence</td><td class="col-hex">#03060D</td></tr>
+          <tr class="future"><td class="col-idx">14</td><td class="col-sw"><span class="sw" style="background:#080e16"></span></td><td class="col-gly">J′</td><td class="col-name">World &amp; Simulation</td><td class="col-hex">#080E16</td></tr>
+          <tr class="future"><td class="col-idx">15</td><td class="col-sw"><span class="sw" style="background:#11191a"></span></td><td class="col-gly">I′</td><td class="col-name">Interface &amp; Gesture</td><td class="col-hex">#11191A</td></tr>
+          <tr><td class="col-idx">16</td><td class="col-sw"><span class="sw" style="background:#212121"></span></td><td class="col-gly">G′</td><td class="col-name">Mirror &amp; Light</td><td class="col-hex">#212121</td></tr>
+          <tr><td class="col-idx">17</td><td class="col-sw"><span class="sw" style="background:#404040"></span></td><td class="col-gly">F′</td><td class="col-name">Machine &amp; Prompt</td><td class="col-hex">#404040</td></tr>
+          <tr><td class="col-idx">18</td><td class="col-sw"><span class="sw" style="background:#a6a6a6"></span></td><td class="col-gly">E′</td><td class="col-name">Screen &amp; Code</td><td class="col-hex">#A6A6A6</td></tr>
+          <tr><td class="col-idx">19</td><td class="col-sw"><span class="sw" style="background:#d9d9d9"></span></td><td class="col-gly">D′</td><td class="col-name">Press &amp; Print</td><td class="col-hex">#D9D9D9</td></tr>
+          <tr><td class="col-idx">20</td><td class="col-sw"><span class="sw" style="background:#f1f1f1"></span></td><td class="col-gly">C′</td><td class="col-name">Papyrus &amp; Ink</td><td class="col-hex">#F1F1F1</td></tr>
+          <tr><td class="col-idx">21</td><td class="col-sw"><span class="sw" style="background:#f7f7f7"></span></td><td class="col-gly">B′</td><td class="col-name">Dust &amp; Trace</td><td class="col-hex">#F7F7F7</td></tr>
+          <tr><td class="col-idx">22</td><td class="col-sw"><span class="sw" style="background:#ffffff"></span></td><td class="col-gly">A′</td><td class="col-name">Consciousness &amp; Breath</td><td class="col-hex">#FFFFFF</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</details>
+
+<!-- ───────── §03 Artist Statement (toggle) ───────── -->
+<details class="disclosure" id="statement">
+  <summary>
+    <div class="section-no">§ 03</div>
+    <div class="lede">
+      <strong>Artist Statement</strong>
+      The work refuses the fantasy of a pure human signal untouched by tools. The fingerprint is not the proof that the maker was alone in the room. It is the proof that the maker passed through every medium that ever carried thought.
+    </div>
+    <div class="marker"></div>
+  </summary>
+  <div class="body">
+    <div class="gutter">2026<br />Statement</div>
+    <div class="content">
+      <p><span class="em">Signatures Through Technologies</span> began as a response to simplified AI-use labels and percentage attributions, which describe human and machine contribution as if they can be cleanly separated.</p>
+      <p>The discomfort was that this misses something deeper. Human thought has always been shaped by the technologies that carry language. AI is not the first tool to enter consciousness. Orality, writing, print, computation, and language models are part of a long, recursive history of how the self becomes legible to itself.</p>
+      <p>Socrates feared writing because it would move memory outside the self. Maybe he was right. Human thought surely developed differently through the alphabet. And maybe that is the point: every medium changes what it means to think. Every tool leaves a fingerprint on the self.</p>
+      <p>Oral tradition carries memory through breath, voice, repetition, body, community. Written tradition moves memory outside the body through mark, alphabet, inscription, archive. AI carries language through prediction, tokens, and machine mediation.</p>
+      <p>This is not a story about the disappearance of the human. It is a story about the human signal passing through different mirrors. The fingerprint changes as the medium changes; the fingerprint remains.</p>
+      <p>The animation moves through twenty-two states. The original sixteen are the canonical chiasm: white to black to white, orality to silence to return. Three speculative states are inserted as a luminescent flare on either side of the origin. <span class="em">Gesture &amp; Interface</span>, <span class="em">Simulation &amp; World</span>, <span class="em">Luminescence &amp; Matter</span>: a hypothesis about the substrates through which a human signature may become visible after writing, after the screen, after the prompt.</p>
+      <p>The work is not linear. Each tile is a door. The viewer can begin anywhere.</p>
+    </div>
+  </div>
+</details>
+
+<!-- ───────── §04 About the Artist (toggle) ───────── -->
+<details class="disclosure" id="artist">
+  <summary>
+    <div class="section-no">§ 04</div>
+    <div class="lede">
+      <strong>The Artist</strong>
+      Avery Lake is a Swiss-Canadian conceptual artist and ethicist whose work explores what remains profoundly human in the Intelligence Age.
+    </div>
+    <div class="marker"></div>
+  </summary>
+  <div class="body">
+    <div class="gutter">Avery Lake<br />Studio</div>
+    <div class="content">
+      <p style="font-size: clamp(17px, 1.4vw, 22px); line-height: 1.5; font-weight: 300; color: var(--fg-strong); font-style: italic; margin: 0 0 24px; max-width: 50ch;">
+        “Ten years ago, I completed a PhD in bioethics. I watched as years of study could be replicated by machines in seconds. That raised a deeper question: what comes after disruption? This project is my unfolding response.”
+      </p>
+      <p style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin: 0 0 32px;">Avery Lake</p>
+      <p>Avery Lake is a Swiss-Canadian conceptual artist and ethicist whose work explores what remains profoundly human in the Intelligence Age. With a background spanning theology in Vancouver, bioethics in Zurich, and philosophy in Oxford and Calgary, Lake draws on over a decade of doctoral and postdoctoral research into human enhancement and the ethics of artificial intelligence.</p>
+      <p>After years working at the intersection of technology, design, and culture, Lake turned to art to ask deeper questions. Through limited-edition conceptual pieces, participatory formats, and poetic reflection, each work explores the fragile intersections of humanity, nature, and machine logic.</p>
+      <p>Recent collections include <a class="work-link" href="https://gallery.averylakeofficial.com/products/the-mirror-making-of-a-manifesto" target="_blank" rel="noopener"><span class="em">The Mirror Making of a Manifesto</span></a>, <span class="em">Becoming Andy. To chosen singularity</span>, <span class="em">The Gift of Breath</span>, and the ongoing <span class="em">Signatures Through Technologies</span>. Each work is editioned and minted upon request.</p>
+      <h3>Threads</h3>
+      <ul>
+        <li><span class="k">Manifesto</span><span><a href="https://gallery.averylakeofficial.com/pages/manifesto-art-in-the-intelligence-age" target="_blank" rel="noopener">The Age of Beauty. Art in the Intelligence Age</a></span></li>
+        <li><span class="k">CV</span><span><a href="https://gallery.averylakeofficial.com/pages/cv" target="_blank" rel="noopener">Exhibitions &amp; biography</a></span></li>
+        <li><span class="k">Gallery</span><span><a href="https://gallery.averylakeofficial.com" target="_blank" rel="noopener">gallery.averylakeofficial.com</a></span></li>
+        <li><span class="k">Writing</span><span><a href="https://averylakeofficial.substack.com" target="_blank" rel="noopener">Substack</a></span></li>
+        <li><span class="k">Studio</span><span><a href="mailto:hello@averylakeofficial.com">hello@averylakeofficial.com</a></span></li>
+      </ul>
+    </div>
+  </div>
+</details>
+
+<!-- ───────── §05 Creative Lineage (toggle) ───────── -->
+<details class="disclosure" id="lineage">
+  <summary>
+    <div class="section-no">§ 05</div>
+    <div class="lede">
+      <strong>Creative Lineage</strong>
+      How this work descends from <a class="work-link" href="https://gallery.averylakeofficial.com/products/the-mirror-making-of-a-manifesto" target="_blank" rel="noopener"><em>The Mirror Making of a Manifesto</em></a>, what it isolates, and where it is going next. The fingerprint as the distilled axis of a larger recursive field.
+    </div>
+    <div class="marker"></div>
+  </summary>
+  <div class="body">
+    <div class="gutter">2025 / 2026<br />Lineage</div>
+    <div class="content">
+      <h3>Antecedent. The Mirror Making of a Manifesto, 2025</h3>
+      <p><a class="work-link" href="https://gallery.averylakeofficial.com/products/the-mirror-making-of-a-manifesto" target="_blank" rel="noopener"><em>The Mirror Making of a Manifesto</em></a> is a visual meditation and framework built last year on creativity in the age of intelligence. It establishes the sixteen-state structure: a chromatic chiasm passing through states of language, surface, and mediation, and folding back through itself. The manifesto piece says the process is not linear. Each tile is a door. The viewer can begin anywhere.</p>
+
+      <div class="lineage-companion">
+        <div class="img-wrap">
+          <img src="assets/companion/mirror-making-of-a-manifesto_18x24.webp" alt="The Mirror Making of a Manifesto, 18 × 24 inch print, hung on a paper field with binder clips" />
+        </div>
+        <div class="text">
+          <div class="label">Companion print · 2025</div>
+          <h4><a class="work-link" href="https://gallery.averylakeofficial.com/products/the-mirror-making-of-a-manifesto" target="_blank" rel="noopener">The Mirror Making of a Manifesto</a></h4>
+          <p>A visual meditation and framework on creativity in the age of intelligence. Sixteen tiles. A through H, then H′ through A′. Manuscript, typeset essay, code, and silence: each is a state of the mark. The print holds the whole chiasm at once; <em>Signatures Through Technologies</em> sets it in motion.</p>
+          <a href="https://gallery.averylakeofficial.com/products/the-mirror-making-of-a-manifesto" target="_blank" rel="noopener">View the companion print →</a>
+        </div>
+      </div>
+
+      <h3>Condensation. Signatures Through Technologies, 2026</h3>
+      <p>The new work takes the sixteen-state structure and condenses it into a fingerprint: the same recursive field, isolated to the technological carriers of language. Where the manifesto maps the whole, the signature isolates the axis. Every medium leaves a fingerprint on the self; the fingerprint changes as the medium changes; the fingerprint remains.</p>
+
+      <h3>Speculative. The expanded chiasm</h3>
+      <p>The 22-state version was made to test what comes after the screen and after the prompt. <span class="em">Gesture &amp; Interface</span>, <span class="em">Simulation &amp; World</span>, and <span class="em">Luminescence &amp; Matter</span> are inserted as a luminescent flare on either side of the origin: a hypothesis about post-AI substrates through which a human signature may still become visible. They do not replace the black centre. Silence remains the hinge.</p>
+
+      <h3>Process record</h3>
+      <ul>
+        <li><span class="k">Substack</span><span><a href="https://substack.com/@averylakeofficial/note/c-264158067" target="_blank" rel="noopener">First note on Signatures Through Technologies</a></span></li>
+        <li><span class="k">Video</span><span><a href="https://youtu.be/IdvAe_U98Us" target="_blank" rel="noopener">Screening excerpt with soundtrack</a></span></li>
+        <li><span class="k">Instagram</span><span><a href="https://www.instagram.com/p/DYufARDt4Lh/" target="_blank" rel="noopener">Studio post, work in progress</a></span></li>
+        <li><span class="k">IG Stories</span><span><a href="https://www.instagram.com/stories/highlights/17892298776494560/" target="_blank" rel="noopener">Process archive, story highlights</a></span></li>
+        <li><span class="k">Companion</span><span><a href="https://gallery.averylakeofficial.com/collections/the-mirror-making-of-a-manifesto" target="_blank" rel="noopener">The Mirror Making of a Manifesto, collection</a></span></li>
+      </ul>
+    </div>
+  </div>
+</details>
+
+<!-- ───────── §06 Acquisition (toggle) ───────── -->
+<details class="disclosure" id="acquire">
+  <summary>
+    <div class="section-no">§ 06</div>
+    <div class="lede">
+      <strong>Acquisition</strong>
+      1 / 1. Minted upon request. For private collectors, exhibitions, and editorial coverage.
+    </div>
+    <div class="marker"></div>
+  </summary>
+  <div class="body">
+    <div class="gutter">1 / 1<br />Minted on request</div>
+    <div class="content">
+      <p style="font-size: clamp(16px, 1.25vw, 19px); line-height: 1.6; color: var(--fg); margin: 0 0 32px; max-width: 60ch;">
+        <em>Signatures Through Technologies</em> is editioned as a single archival mint. The work transfers with the full chiasm: the 22-state expanded sequence, the 16-state canonical spine, the soundtrack <em>Superposition</em> by Avery Lake, an artist-signed certificate, and a written companion piece by the studio. Print and physical editions are available by request.
+      </p>
+      <div class="acquire-block">
+        <a class="acquire-card" href="mailto:hello@averylakeofficial.com?subject=Signatures%20Through%20Technologies%20%E2%80%94%20Acquisition%20enquiry">
+          <div>
+            <div class="label">Collectors / 1 / 1</div>
+            <h4>Acquisition enquiry</h4>
+            <p>For private collectors interested in the single archival mint, signed certificate, and accompanying companion piece.</p>
+          </div>
+          <span class="cta">Write to the studio →</span>
+        </a>
+        <a class="acquire-card" href="mailto:hello@averylakeofficial.com?subject=Signatures%20Through%20Technologies%20%E2%80%94%20Curatorial%20enquiry">
+          <div>
+            <div class="label">Press / Curatorial</div>
+            <h4>Curatorial &amp; press</h4>
+            <p>For exhibitions, publications, and editorial coverage. High-resolution stills and the full statement are available on request.</p>
+          </div>
+          <span class="cta">Request a press kit →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- ───────── Footer ───────── -->
+<footer class="foot" aria-label="Site colophon">
+  <div class="colophon">
+    <span class="sig">Avery Lake</span>
+    Studio working between embodied gesture and machine-mediated language. Each work is editioned and minted upon request.
+  </div>
+  <div>
+    <h5>Studio</h5>
+    <ul>
+      <li><a href="https://averylakeofficial.com" target="_blank" rel="noopener">averylakeofficial.com</a></li>
+      <li><a href="https://gallery.averylakeofficial.com" target="_blank" rel="noopener">Gallery</a></li>
+      <li><a href="https://gift.averylakeofficial.com" target="_blank" rel="noopener">The Gift of Breath</a></li>
+    </ul>
+  </div>
+  <div>
+    <h5>Public</h5>
+    <ul>
+      <li><a href="https://substack.com/@averylakeofficial" target="_blank" rel="noopener">Substack</a></li>
+      <li><a href="https://youtu.be/IdvAe_U98Us" target="_blank" rel="noopener">Video excerpt</a></li>
+      <li><a href="https://www.instagram.com/averylakeofficial/" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.instagram.com/stories/highlights/17892298776494560/" target="_blank" rel="noopener">Process archive</a></li>
+    </ul>
+  </div>
+  <div>
+    <h5>This work</h5>
+    <ul>
+      <li><a href="mailto:hello@averylakeofficial.com">Acquire</a></li>
+      <li><a href="mailto:hello@averylakeofficial.com">Press</a></li>
+      <li><a href="#chiasm">The 22 states</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div style="padding: 24px var(--pad-x); border-top: 1px solid var(--hair); font-family: var(--font-mono); font-size: 10px; line-height: 1.7; color: var(--muted); letter-spacing: 0.02em; text-transform: none;">
+  With gratitude, The Art of Avery Lake acknowledges practicing on Stó:lō Tém:éxw, in the unceded Stó:lō territory of the Máthxwi First Nation and the Semá:th First Nation.
+  <span style="display: inline-block; margin-left: 24px; letter-spacing: 0.18em; text-transform: uppercase;">© 2026 The Art of Avery Lake</span>
+</div>
+
+<script>
+  // ───────── Theme toggle (persists in localStorage)
+  (function () {
+    const root = document.documentElement;
+    const stored = localStorage.getItem('avl-theme');
+    if (stored === 'dark' || stored === 'light') root.setAttribute('data-theme', stored);
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) root.setAttribute('data-theme', 'dark');
+
+    const btn = document.getElementById('themeToggle');
+    function render() {
+      const cur = root.getAttribute('data-theme') || 'light';
+      btn.innerHTML = cur === 'dark'
+        ? '<span style="color:var(--accent)">●</span>&nbsp;Dark <span style="opacity:0.4">/ Light</span>'
+        : '<span style="opacity:0.4">Dark /</span> <span style="color:var(--accent)">●</span> Light';
+    }
+    render();
+    btn.addEventListener('click', () => {
+      const cur = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', cur);
+      localStorage.setItem('avl-theme', cur);
+      render();
+    });
+  })();
+
+  // ───────── Active section highlighting in topnav
+  (function () {
+    const links = document.querySelectorAll('.topnav a[href^="#"]');
+    if (!links.length) return;
+    const map = new Map();
+    links.forEach(a => {
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if (el) map.set(el, a);
+    });
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          links.forEach(l => l.style.color = '');
+          const a = map.get(en.target);
+          if (a) a.style.color = 'var(--fg-strong)';
+        }
+      });
+    }, { rootMargin: '-40% 0px -50% 0px' });
+    map.forEach((_, el) => obs.observe(el));
+  })();
+</script>
+</body>
+</html>
